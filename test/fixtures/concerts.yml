@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticketfly_id: 1
+  name: MyString
+  headlinerName: MyString
+  openerName: MyString
+  date: 2015-02-21 17:44:01
+  image: MyString
+  purchaseUrl: MyString
+
+two:
+  ticketfly_id: 1
+  name: MyString
+  headlinerName: MyString
+  openerName: MyString
+  date: 2015-02-21 17:44:01
+  image: MyString
+  purchaseUrl: MyString
