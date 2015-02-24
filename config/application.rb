@@ -22,5 +22,7 @@ module DCTunez
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    RSpotify::authenticate("d3b607a52a504614a060e7ddd6291274", "a28a5071f4a74ed6b0d9643226e0012d")
   end
 end
