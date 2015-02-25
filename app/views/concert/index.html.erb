@@ -1,0 +1,17 @@
+<h1><%= @headliner %></h1>
+
+<img src="<%= @image %>">
+
+<a href="<%= @purchase %>">Purchase Ticket</a>
+
+<a href="<%= @openspot %>">Listen to Tunez</a>
+
+<%= @playlist %>
+
+	<% @events.each do |concert| %>
+   			<h1><%= concert["headlinersName"] %></h1> 
+   			<a href="<%= concert["ticketPurchaseUrl"] %>">Purchase Ticket</a>
+   			<%= concert["startDate"] %>
+	<% end %>
+
+	<iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A0cmWgDlu9CwTgxPhf403hb" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>

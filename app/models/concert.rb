@@ -1,23 +1,41 @@
 class Concert < ActiveRecord::Base
 	belongs_to :Venue
-	has_many :artists
 
 	attr_accessor	:name,
-								:headlinerName,
-								:openerName,
-								:date,
-								:image,
-								:purchaseUrl
+					:headlinerName,
+					:openerName,
+					:date,
+					:image,
+					:purchaseUrl
 
-	def upcoming
+
+	def self.ticketfly
 		@response = HTTParty.get("http://www.ticketfly.com/api/events/upcoming.json?orgId=355")
-		@headliner = @response["events"][0]["headlinersName"]
-    @purchase = @response["events"][0]["ticketPurchaseUrl"]
+		@events = @response["events"]
+		@events.each do |concert|
+			@headliner = concert["headlinersName"]
+			concert["ticketPurchaseUrl"]
+			concert["image"]["small1"]["path"]
+			concert["startDate"]
+		end
+
+	
 	end
 
-	# def location
-	# 	{:lat => latitude, :lon => longitude}
-	# end
+	def self.spotify(headliner)
+		@artists = RSpotify::Artist.search(@headliner)
+    	@musician = @artists.first
+    	@toptracks = @musician.top_tracks(:US)
+   		@openspot = @musician.external_urls['spotify']
+   		
+	end
+
+	# <% @events.each do |concert| %>
+ #   			<h1><%= concert["headlinersName"] %></h1> 
+ #   			<a href="<%= concert["ticketPurchaseUrl"] %>">Purchase Ticket</a>
+ #   			<img src="<%= concert["image"][5] %>">
+ #   			<%= concert["startDate"] %>
+	# <% end %>
 
 	# def initialize(attrs)
  #    attrs.each do |method, value|

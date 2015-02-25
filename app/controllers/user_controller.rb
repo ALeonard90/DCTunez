@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UserController < ApplicationController
   def spotify
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     # Now you can access user's private data, create playlists and much more
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
 	@headliner = @response["events"][0]["headlinersName"]
     @music = RSpotify::Artist.search(params[:search])
     render :json => @music
-	end
+    end
 
 end
