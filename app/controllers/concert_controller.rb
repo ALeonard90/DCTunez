@@ -10,20 +10,22 @@ class ConcertController < ApplicationController
 		artist = RSpotify::Artist.search(headliner).first
 		artist_id = artist.nil? ? '' : artist.id
 
-		# puts "artist: #{artist}"
-
 	   	@new_event = {
    			headliner: headliner,
    		    purchase_url: event["ticketPurchaseUrl"],
    		    image: event["image"]["small1"]["path"],
    		    artist: artist,
-   		   	playlist: artist_id
+   		   	playlist: artist_id,
+   		   	date: event["startDate"]
 	   	}
 
 	   	@parsed_events << @new_event
-	end
-
-	render json: @parsed_events
+		end
+		respond_to do |format|
+			format.html
+			format.json{render json: @parsed_events}
+		end
+	
    end
 
 end
