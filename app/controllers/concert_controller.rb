@@ -1,6 +1,6 @@
 class ConcertController < ApplicationController
 	def index
-	@response = HTTParty.get("http://www.ticketfly.com/api/events/upcoming.json?orgId=355")
+	@response = HTTParty.get("http://www.ticketfly.com/api/events/upcoming.json?orgId=4")
 	@events = @response["events"]
 
 	@parsed_events = []
@@ -13,7 +13,7 @@ class ConcertController < ApplicationController
 	   	@new_event = {
    			headliner: headliner,
    		    purchase_url: event["ticketPurchaseUrl"],
-   		    image: event["image"]["small1"]["path"],
+   		    image: event["image"]["medium1"]["path"],
    		    artist: artist,
    		   	playlist: artist_id,
    		   	date: event["startDate"]
