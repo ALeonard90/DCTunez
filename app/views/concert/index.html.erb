@@ -11,10 +11,12 @@
 		success:function(response){
 			console.log(response);
 			for (var i=0;i<response.length;i++) {
-            $('.events').append('<div class="headliner">' + response[i].headliner +'</div>')
+            $('.events').append('<div class="headliner">' + 
+            	'<img src="'+response[i].image+'"'+'</div>');
+            $('.events').append('<div class="headliner">' + response[i].headliner +'</div>');
+            $('.events').append('<div class="date">' + response[i].date +'</div>');
+            $('.events').append('<div class="purchase_url">' + '<a href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</div>');
             $('.events').append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[i].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
-            // alert(response[i].headliner);
-            
          }	
 		}
 	})
