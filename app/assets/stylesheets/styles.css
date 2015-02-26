@@ -1,0 +1,12 @@
+.headliner{
+	color: blue;
+	display: inline-block;
+}
+
+.date{
+	display: inline-block;
+}
+
+.purchase_url{
+	display: inline-block;
+}

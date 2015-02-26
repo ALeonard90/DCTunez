@@ -1,3 +1,4 @@
+
 <div class="events">
 
 
@@ -11,13 +12,21 @@
 		success:function(response){
 			console.log(response);
 			for (var i=0;i<response.length;i++) {
-            $('.events').append('<div class="headliner">' + 
-            	'<img src="'+response[i].image+'"'+'</div>');
-            $('.events').append('<div class="headliner">' + response[i].headliner +'</div>');
-            $('.events').append('<div class="date">' + response[i].date +'</div>');
-            $('.events').append('<div class="purchase_url">' + '<a href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</div>');
-            $('.events').append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[i].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
-         }	
+            $('.events').append(
+            	'<div class="concert" id="'+i+'">' + 
+            	'<img src="'+response[i].image+'">'+
+            	'<h2 class="headliner">' + response[i].headliner +'</h2>'+
+            	'<h4 class="date">' + response[i].date +'</h4>'+ 
+            	'<h4 class="purchase_url">' + '<a href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</h4>'+
+            	'</div>');
+            console.log(i);
+         }
+         $('.concert').on('click', function()
+            {
+            $(this).append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[parseInt(this.id)].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
+            	console.log("worked");
+            })	
 		}
 	})
 </script>
+
