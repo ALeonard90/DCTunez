@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/artist', to: 'users#artist'
 
+  get '/uhall', to: 'concert#uhall'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

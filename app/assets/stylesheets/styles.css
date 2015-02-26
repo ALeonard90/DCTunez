@@ -1,12 +1,60 @@
+.events{
+}
+
+.uhall{
+	margin-left: 40%;
+	margin-right: 40%;
+}
+img{
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+.concert{
+	margin-bottom: 2%;
+	border-bottom: 1px solid #f2f2f2;
+	background-color: white;
+	box-shadow: inset 0 0.1em rgba(255,255,255,0.1),0 0.1em 0.1em #000,0 0.2em rgba(255,255,255,0.1),0 0 0 0.2em rgba(0,0,0,0.1);
+}
+
 .headliner{
-	color: blue;
+	color: #363A93;
 	display: inline-block;
+	margin-left: 2%;
 }
 
 .date{
 	display: inline-block;
+	margin-left: 2%;
+	color: #0A7660;
 }
 
 .purchase_url{
 	display: inline-block;
+	margin-left: 2%;
+}
+
+a{
+	text-decoration: none;
+	border: 1px solid black;
+	color: #363A93;
+	background-color: white;
+	padding: 6px;
+	box-shadow: inset 0 0.1em rgba(255,255,255,0.1),0 0.1em 0.1em #000,0 0.2em rgba(255,255,255,0.1),0 0 0 0.2em rgba(0,0,0,0.1);
+}
+
+a:hover{
+	background-color: #363A93;
+	color: white;
+}
+
+.tunez{
+	margin-left: 10%;
+}
+
+.sign_in{
+	margin-left: 40%;
+	margin-right: 40%;
+	margin-top: 25%;
+	margin-bottom: 25%;
 }
