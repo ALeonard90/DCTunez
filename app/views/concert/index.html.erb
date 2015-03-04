@@ -1,8 +1,5 @@
 <div class="events">
-
-
 </div>
-
 <script>
 	var request= $.ajax({
 		url:"/concerts",
@@ -23,9 +20,7 @@
          $('.concert').on('click', function()
             {
             $(this).append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[parseInt(this.id)].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
-            	console.log("worked");
             })	
 		}
 	})
 </script>
-
