@@ -1,6 +1,17 @@
-<div class="uhall">
-	<%= link_to 'See shows at the 930 club', '/concert' %>
-</div>
+
+<nav class="tab-nav tab-nav-blue">
+          <ul class="nav nav-justified">
+            <li>
+              <a data-toggle="tab" href="/930">930 Club</a>
+            </li>
+            <li class="active">
+              <a data-toggle="tab" href="/uhall">U-Hall</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="/echostage">Echo Stage</a>
+            </li>
+          </ul>
+</nav>
 
 <div class="events">
 
@@ -8,27 +19,40 @@
 </div>
 
 <script>
-	var request= $.ajax({
-		url:"/concerts",
-		type:"GET",
-		dataType:"json",
-		success:function(response){
-			console.log(response);
-			for (var i=0;i<response.length;i++) {
+    var request= $.ajax({
+        url:"/uhall",
+        type:"GET",
+        dataType:"json",
+        success:function(response){
+            console.log(response);
+            for (var i=0;i<response.length;i++) {
             $('.events').append(
-            	'<div class="concert" id="'+i+'">' + 
-            	'<img src="'+response[i].image+'">'+
-            	'<h2 class="headliner">' + response[i].headliner +'</h2>'+
-            	'<h4 class="date">' + response[i].date +'</h4>'+ 
-            	'<h4 class="purchase_url">' + '<a href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</h4>'+
-            	'</div>');
+              '<h4 class="date">' + response[i].date +'</h4>'+ 
+                '<div class="concert" id="'+i+'">' +
+                '<img src="'+response[i].image+'">'+
+                '<h2 class="headliner-name">' + response[i].headliner +'</h2>'+
+              '<a class="btn btn-flat playtunez" id="'+i+'">Listen to Tunez</a>'+
+                '<h4 class="purchase_url">' + '<a class="btn btn-flat" href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</h4>'+
+                '</div>');
             console.log(i);
          }
-         $('.concert').on('click', function()
+         $('.playtunez').on('click', function()
             {
+            if (this.id != ''){   
             $(this).append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[parseInt(this.id)].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
-            	console.log("worked");
-            })	
-		}
-	})
+            }
+            })  
+        }
+    })
 </script>
+<script>
+// btn active
+  $('.btn').on('mousedown touchstart', function() {
+    var $this = $(this);
+    if (!$this.hasClass('btn-active')) {
+      $this.addClass('btn-active');
+      setTimeout(function() {
+        $this.removeClass('btn-active');
+      }, 450);
+    }
+})</script>

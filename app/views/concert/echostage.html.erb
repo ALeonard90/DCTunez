@@ -1,25 +1,18 @@
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-
-</body>
-</html>
 
 <nav class="tab-nav tab-nav-blue">
           <ul class="nav nav-justified">
-            <li class="active">
+            <li>
               <a data-toggle="tab" href="/930">930 Club</a>
             </li>
             <li>
               <a data-toggle="tab" href="/uhall">U-Hall</a>
             </li>
-            <li>
+            <li class="active">
               <a data-toggle="tab" href="/echostage">Echo Stage</a>
             </li>
           </ul>
 </nav>
+
 <div class="events">
   <!-- <div class="concert-list">
     <h4 class="concert-date"></h4>
@@ -35,7 +28,7 @@
 
 <script>
 	var request= $.ajax({
-		url:"/930",
+		url:"/echostage",
 		type:"GET",
 		dataType:"json",
 		success:function(response){

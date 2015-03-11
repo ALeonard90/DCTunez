@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#index'
 
-  get '/concerts', to: 'concert#index'
+  get '/930', to: 'concert#index'
 
   post '/music', to: 'users#music'
 
   get '/artist', to: 'users#artist'
 
   get '/uhall', to: 'concert#uhall'
+
+  get '/echostage', to: 'concert#echostage'
 
 
   # Example of regular route:
