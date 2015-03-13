@@ -48,10 +48,9 @@ a{
 
 
 .sign_in{
-	margin-left: 40%;
-	margin-right: 40%;
-	margin-top: 25%;
-	margin-bottom: 25%;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
