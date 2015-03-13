@@ -29,7 +29,7 @@ class UserController < ApplicationController
 
 end
 
-top_tracks = artist.top_tracks(:us)
-        top_ten = top_tracks.first.class
-        playlist.add_tracks!(top_ten)
-        spotify_user.save_tracks!(top_ten)
+# top_tracks = artist.top_tracks(:us)
+#         top_ten = top_tracks.first.class
+#         playlist.add_tracks!(top_ten)
+#         spotify_user.save_tracks!(top_ten)
