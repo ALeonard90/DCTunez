@@ -1,26 +1,5 @@
-
-<nav class="tab-nav tab-nav-blue">
-  <ul class="nav nav-justified">
-    <li>
-      <a data-toggle="tab" href="/930">930 Club</a>
-    </li>
-    <li>
-      <a data-toggle="tab" href="/uhall">U-Hall</a>
-    </li>
-    <li class="active">
-      <a data-toggle="tab" href="/echostage">Echo Stage</a>
-    </li>
-  </ul>
-</nav>
-
-<div class="events">
-
-</div>
-
-
-<script>
-  var request= $.ajax({
-    url:"/echostage",
+var request= $.ajax({
+    url:"/930",
     type:"GET",
     dataType:"json",
     success:function(response){
@@ -45,9 +24,7 @@
         });
     }
   })
-</script>
 
-<script>
 // btn active
   $('.btn').on('mousedown touchstart', function() {
     var $this = $(this);
@@ -57,4 +34,4 @@
         $this.removeClass('btn-active');
       }, 450);
     }
-})</script>
+  })

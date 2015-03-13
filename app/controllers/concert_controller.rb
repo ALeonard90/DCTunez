@@ -21,6 +21,7 @@ class ConcertController < ApplicationController
 			format.html
 			format.json{render json: @parsed_events}
 		end
+
    end
 
    def uhall

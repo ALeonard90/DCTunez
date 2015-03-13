@@ -1,12 +1,3 @@
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-
-</body>
-</html>
-
 <nav class="tab-nav tab-nav-blue">
           <ul class="nav nav-justified">
             <li class="active">
@@ -20,54 +11,7 @@
             </li>
           </ul>
 </nav>
+
 <div class="events">
-  <!-- <div class="concert-list">
-    <h4 class="concert-date"></h4>
-    <div class="concert">
-      <img class="headliner-photo" >
-      <h2 class="headliner-name"></h2>
-      <a class="icon icon-vynil"> </a>
-      <a class="icon icon-banknote" ></a>
-    </div>
-  </div> -->
+
 </div>
-
-
-<script>
-	var request= $.ajax({
-		url:"/930",
-		type:"GET",
-		dataType:"json",
-		success:function(response){
-			console.log(response);
-			for (var i=0;i<response.length;i++) {
-            $('.events').append(
-              '<h4 class="date">' + response[i].date +'</h4>'+ 
-            	'<div class="concert" id="'+i+'">' +
-            	'<img src="'+response[i].image+'">'+
-            	'<h2 class="headliner-name">' + response[i].headliner +'</h2>'+
-              '<a class="btn btn-flat playtunez" id="'+i+'">Listen to Tunez</a>'+
-            	'<h4 class="purchase_url">' + '<a class="btn btn-flat" href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</h4>'+
-            	'</div>');
-            console.log(i);
-         }
-         $('.playtunez').on('click', function()
-            {
-            if (this.id != ''){   
-            $(this).append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[parseInt(this.id)].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
-            }
-            })	
-		}
-	})
-</script>
-<script>
-// btn active
-  $('.btn').on('mousedown touchstart', function() {
-    var $this = $(this);
-    if (!$this.hasClass('btn-active')) {
-      $this.addClass('btn-active');
-      setTimeout(function() {
-        $this.removeClass('btn-active');
-      }, 450);
-    }
-})</script>

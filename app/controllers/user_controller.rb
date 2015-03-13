@@ -3,7 +3,7 @@ class UserController < ApplicationController
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
     # Create playlist in user's Spotify account
-    playlist = spotify_user.create_playlist!('my-awesome-playlist')
+    playlist = spotify_user.create_playlist!('testing123')
 
     # Add tracks to a playlist in user's Spotify account
     tracks = RSpotify::Track.search('Know')
@@ -28,3 +28,8 @@ class UserController < ApplicationController
     end
 
 end
+
+top_tracks = artist.top_tracks(:us)
+        top_ten = top_tracks.first.class
+        playlist.add_tracks!(top_ten)
+        spotify_user.save_tracks!(top_ten)
