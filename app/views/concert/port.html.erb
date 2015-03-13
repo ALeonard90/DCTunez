@@ -1,0 +1,40 @@
+<h4 class="date"></h4>
+    <div class="concert">
+        <img class="band-pic">
+        <h2 class="headliner-name"></h2>
+        <a class="btn btn-flat playtunez">Listen to Tunez</a>
+        <a class="btn btn-flat purchase-url">Buy Tickets</a>
+    </div>
+<script>
+var request= $.ajax({
+        url:"/uhall",
+        type:"GET",
+        dataType:"json",
+        success:function(response){
+            console.log(response);
+            for (var i=0;i<response.length;i++) {
+            $('.events').append( 
+              '$('.date').append(response[i].date 
+                    )
+                $('.concert').appendAttr('id', response[i]
+                    )
+                $('.concert').append(
+                    $('.band-pic').appendAttr('src', response[i].image
+                        )
+                    $('.headliner-name').append(response[i].headliner
+                        )
+                    $('.playtunez').appendAttr('id', i
+                        )
+                    $('.purchase-url').appendAttr('href', response[i].purchase_url
+                        )
+                )
+         }
+         $('.playtunez').on('click', function()
+            {
+            if (this.id != ''){   
+            $(this).append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[parseInt(this.id)].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>')
+            }
+            })  
+        }
+    })
+</script>

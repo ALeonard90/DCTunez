@@ -1,9 +1,15 @@
+.dctunez{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .events{
 	background-color: #1A237E;
 	height: 100%;
 }
 
-img{
+.band-pic{
 	margin-top: 2%;
 	margin-left: 2%;
 }
@@ -11,7 +17,6 @@ img{
 .concert{
 	background-color: #CFD8DC;
 	border-bottom: #E91E63;
-	/*box-shadow: inset 0 0.1em rgba(144, 164, 174, 1),0 0.1em 0.1em #000,0 0.2em rgba(144, 164, 174, 1),0 0 0 0.2em rgba(144, 164, 174, 1);*/*/
 }
 
 .headliner-name{
@@ -30,7 +35,7 @@ img{
 	font-family: 'Lato', sans-serif;
 }
 
-.purchase_url{
+.purchase-url{
 	display: inline-block;
 	margin-left: 2%;
 	text-align: center;

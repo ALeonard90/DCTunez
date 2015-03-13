@@ -14,8 +14,7 @@
 </nav>
 
 <div class="events">
-
-
+    
 </div>
 
 <script>
@@ -26,14 +25,13 @@
         success:function(response){
             console.log(response);
             for (var i=0;i<response.length;i++) {
-            $('.events').append(
+            $('.events').append( 
               '<h4 class="date">' + response[i].date +'</h4>'+ 
                 '<div class="concert" id="'+i+'">' +
-                '<img src="'+response[i].image+'">'+
+                '<img class="band-pic" src="'+response[i].image+'">'+
                 '<h2 class="headliner-name">' + response[i].headliner +'</h2>'+
               '<a class="btn btn-flat playtunez" id="'+i+'">Listen to Tunez</a>'+
-                '<h4 class="purchase_url">' + '<a class="btn btn-flat" href="'+response[i].purchase_url+'">Buy Tickets</a>' +'</h4>'+
-                '</div>');
+                '<a class="btn btn-flat purchase-url" href="'+response[i].purchase_url+'">Buy Tickets</a>'+'</div>');
             console.log(i);
          }
          $('.playtunez').on('click', function()

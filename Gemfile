@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 gem 'rails_12factor'
 gem 'httparty'
 gem 'rspotify'
