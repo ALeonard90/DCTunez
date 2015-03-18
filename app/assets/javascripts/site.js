@@ -17,7 +17,6 @@ var request= $.ajax({
         $('.playtunez').on('click', function(){
             if (this.id != ''){   
               $(this).append('<div class="tunez"><iframe src="https://embed.spotify.com/?uri=spotify%3Aartist%3A'+response[parseInt(this.id)].playlist+'"width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
-              $('.concert').append('<a class="btn btn-flat addtunez" id="'+i+'">Add to Spotify</a>')
             }
           });
         $('.purchase-url').on('click',function(){
